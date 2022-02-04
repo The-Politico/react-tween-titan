@@ -1,0 +1,13 @@
+{
+  "name": "react-tween-titans",
+  "version": "1.0.0",
+  "description": "A React libary that uses tween-titan to interpolate DOM elements declaratively.",
+  "main": "index.js",
+  "author": "Andrew McGill <arm5077@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
