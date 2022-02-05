@@ -1,0 +1,87 @@
+<html>
+<head>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="../dist/index.js"></script>
+</head>
+
+<style type="text/css">
+  .runway {
+
+  }
+
+  .waypoint {
+    border-top: 1px dashed black;
+    text-align: center;
+    margin-top: 100vh;
+  }
+
+  .item {
+    position: fixed;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    background-color: seagreen;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+
+<body>
+  <div id="root" />
+</body>
+<script type="text/babel">
+  const { useTween } = ReactTweenTitan;
+  const TestThing = () => {
+    const [ref, tweenProps] = useTween({
+      mode: 'waypoints',
+      stepFunction: (percent) => {
+        return {
+          percent
+        }
+      },
+      waypoints: [
+        {
+          elem: '#waypoint-1',
+          style: {
+            transform: 'rotate(0deg)',
+          }
+        },
+        {
+          elem: '#waypoint-2',
+          style: {
+            transform: 'rotate(180deg)',
+          }
+        },
+        {
+          elem: '#waypoint-3',
+          style: {
+            transform: 'rotate(0deg)',
+          }
+        },
+      ]
+    })
+    return (
+      <div
+        className='runway'
+      >
+        <div
+          className='item'
+          ref={ref}
+          {...tweenProps}
+        >
+          {tweenProps.percent}
+        </div>
+        <div className='waypoint' id="waypoint-1">Waypoint 1</div>
+        <div className='waypoint' id="waypoint-2">Waypoint 2</div>
+        <div className='waypoint' id="waypoint-3">Waypoint 3</div>
+      </div>
+    )
+  };
+
+const e = React.createElement;
+const domContainer = document.querySelector('#root');
+ReactDOM.render(e(TestThing), domContainer);
+
+</script>
+</html>
