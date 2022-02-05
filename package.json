@@ -1,5 +1,5 @@
 {
-  "name": "react-tween-titans",
+  "name": "react-tween-titan",
   "version": "1.0.0",
   "description": "A React libary that uses tween-titan to interpolate DOM elements declaratively.",
   "main": "./dist/index.js",
