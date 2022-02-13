@@ -1,6 +1,6 @@
 {
   "name": "react-tween-titan",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A React libary that uses tween-titan to interpolate DOM elements declaratively.",
   "main": "./dist/react-tween-titan.production.js",
   "author": "Andrew McGill <arm5077@gmail.com>",
