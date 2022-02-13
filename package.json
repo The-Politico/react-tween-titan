@@ -2,22 +2,25 @@
   "name": "react-tween-titan",
   "version": "0.0.3",
   "description": "A React libary that uses tween-titan to interpolate DOM elements declaratively.",
-  "main": "./dist/index.js",
+  "main": "./dist/react-tween-titan.production.js",
   "author": "Andrew McGill <arm5077@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "dev": "yarn build && webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "yarn start && webpack serve --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pub": "yarn build && yarn publish"
   },
   "dependencies": {
-    "tween-titan": "^0.0.3"
+    "tween-titan": "^0.0.6"
   },
   "devDependencies": {
     "react": "^17.0.2",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
   },
   "peerDependencies": {
     "react": "^17.0.2"

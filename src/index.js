@@ -13,14 +13,11 @@ export function useTween({
   waypoints: rawWaypoints,
   dependencies = [],
 }) {
-  let tween = { store: '', destroy: () => {} };
-  const onServer = typeof document === 'undefined';
   const ref = useRef();
-  // const [tweenStyle, setStyle] = useState({});
   const [tweenProps, setTweenProps] = useState({});
 
   useEffect(() => {
-    const waypoints = mode === 'waypoints' && !onServer
+    const waypoints = mode === 'waypoints'
       ? getWaypointNodes(rawWaypoints)
       : rawWaypoints;
 
@@ -30,9 +27,14 @@ export function useTween({
 
     const combinedStepFunction = (percent, style, target) => {
       const results = stepFunction(percent, style, target);
+      const resultsStyle = results?.style || {};
+
       const newProps = {
-        style: cloneDeep(style),
         ...results,
+        style: {
+          ...cloneDeep(style),
+          ...resultsStyle
+        },
       };
 
       if (!isEqual(tweenProps, newProps)) {
@@ -40,19 +42,21 @@ export function useTween({
       }
     };
 
-    if (!onServer) {
-      tween = tweenFunction.create({
+  //  if (!onServer) {
+      const tween = tweenFunction.create({
         target: ref.current,
         margin,
         stepFunction: combinedStepFunction,
         waypoints,
         applyStyles: false,
       });
-    }
+      return () => {
+        tween.destroy();
+      };
+  //  }
 
-    return () => {
-      tween.destroy();
-    };
+    return;
+
   }, dependencies);
 
   return [ref, tweenProps];

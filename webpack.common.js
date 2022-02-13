@@ -2,9 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
   output: {
-    filename: 'index.js',
+    filename: 'react-tween-titan.js',
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
     library: {
@@ -20,8 +19,4 @@ module.exports = {
        root: 'React',
      },
    },
-  devServer: {
-    static: './',
-    open: ['/dev'],
-  },
 };
