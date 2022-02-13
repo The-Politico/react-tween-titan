@@ -1,9 +1,10 @@
+/* eslint-disable import/prefer-default-export */
 import {
-  useRef, useEffect, useState, useCallback, useMemo,
+  useRef, useEffect, useState,
 } from 'react';
 import { TweenSelf, TweenWaypoints } from 'tween-titan';
-import cloneDeep from 'lodash/cloneDeep';
-import isEqual from 'lodash/isEqual';
+import cloneDeep from 'lodash.clonedeep';
+import isEqual from 'lodash.isequal';
 import getWaypointNodes from './utils/getWaypointNodes';
 
 export function useTween({
@@ -33,7 +34,7 @@ export function useTween({
         ...results,
         style: {
           ...cloneDeep(style),
-          ...resultsStyle
+          ...resultsStyle,
         },
       };
 
@@ -42,22 +43,18 @@ export function useTween({
       }
     };
 
-  //  if (!onServer) {
-      const tween = tweenFunction.create({
-        target: ref.current,
-        margin,
-        stepFunction: combinedStepFunction,
-        waypoints,
-        applyStyles: false,
-      });
-      return () => {
-        tween.destroy();
-      };
-  //  }
+    const tween = tweenFunction.create({
+      target: ref.current,
+      margin,
+      stepFunction: combinedStepFunction,
+      waypoints,
+      applyStyles: false,
+    });
 
-    return;
-
+    return () => {
+      tween.destroy();
+    };
   }, dependencies);
 
   return [ref, tweenProps];
-};
+}
