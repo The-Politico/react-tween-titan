@@ -1,10 +1,12 @@
-# react-tween-titan
+# react-tween-titan 🦹‍♀️🦸‍♂️⚛
 
 A small-but-mighty library for declaratively animating DOM elements (and other stuff!) on scroll.
 
+See this library in action at tween-titan's [demo site.](https://tween-titan.app)
+
 # What it does
 
-(This library is a React port of [tween-titan](https://github.com/the-politico/tween-titan/)).)
+(This library is a React port of [tween-titan](https://github.com/the-politico/tween-titan/).)
 
 Scrolling is one of the most basic interactions on the internet. Everyone knows how to do it! And it’s fun to make things change as the user scrolls down the page — maybe a chart animates, or the background flips colors. Libraries like Scrollama do this really well.
 
