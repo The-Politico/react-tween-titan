@@ -6,4 +6,13 @@ module.exports = merge(common, {
   output: {
     filename: 'react-tween-titan.production.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+    ],
+  },
 });

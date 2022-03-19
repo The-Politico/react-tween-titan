@@ -14,9 +14,12 @@
     "lint": "eslint \"./src/**/*.js?(x)\""
   },
   "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
     "lodash.clonedeep": "^4.5.0",
     "lodash.isequal": "^4.5.0",
-    "tween-titan": "^0.0.6"
+    "tween-titan": "^0.0.8"
   },
   "devDependencies": {
     "@politico/eslint-config-interactives": "^1.0.1",
