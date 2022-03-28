@@ -4245,10 +4245,10 @@ tsconfig-paths@^3.12.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tween-titan@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/tween-titan/-/tween-titan-0.0.8.tgz#3f043d14ec64b6425df756f4cd31210460bbe858"
-  integrity sha512-jikaQfVjuiWxNgEl7h5jBagVcJde6Lz9KwJ8XECPSIoPYcJXunopKo94Ku4q/E5D8RGGdzDxhdM6FYV70Qu35Q==
+tween-titan@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/tween-titan/-/tween-titan-0.0.9.tgz#5f5f8dd7d85a88467e35fed12900774bb0a5440f"
+  integrity sha512-t952RuVbeZKkkf4q9qDmxfvqRsmgki+hJk0XJJKG+48wlO5y/UAzJx9k9mleiAM5JHMw3ME7FwN3q+il6TTLLA==
   dependencies:
     "@babel/preset-env" "^7.16.11"
     d3-interpolate "^3.0.1"

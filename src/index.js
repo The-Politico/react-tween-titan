@@ -13,6 +13,7 @@ export function useTween({
   stepFunction = () => {},
   waypoints: rawWaypoints,
   dependencies = [],
+  refreshInterval = null,
 }) {
   const ref = useRef();
   const [tweenProps, setTweenProps] = useState({});
@@ -49,6 +50,7 @@ export function useTween({
       stepFunction: combinedStepFunction,
       waypoints,
       applyStyles: false,
+      refreshInterval,
     });
 
     return () => {
